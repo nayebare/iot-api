@@ -19,7 +19,11 @@ from email.mime.text import MIMEText
 app = Flask(__name__)
 CORS(app)
 
-
+@app.route("/", methods=['GET'])
+def index():
+    return("ivory coast iot-training api") 
+    
+#send sms
 @app.route("/sms/", methods=['GET'])
 def post_data_from_provider():
     resp = requests.post('https://textbelt.com/text', {
