@@ -27,7 +27,7 @@ def index():
 @app.route("/sms/", methods=['GET'])
 def post_data_from_provider():
     resp = requests.post('https://textbelt.com/text', {
-    'phone': '+250782330752',
+    'phone': '',
     'message': 'Hello world',
     'key': 'textbelt',
     
@@ -41,10 +41,10 @@ def sendEmail():
     temp = data['data']['temp'] 
     s = smtplib.SMTP('smtp.gmail.com', 587)   
     s.starttls()   
-    s.login("iotivorycoast@gmail.com", "p@#!iVvfNg3pTRh4ts")
+    s.login("", "")
 
     msg = MIMEMultipart()
-    msg['From']="iotivorycoast@gmail.com"
+    msg['From']=""
     msg['To']=data['data']['email']
     msg['Subject']="Alerte de capteur "
     message= "La température a atteint le bon seuil de " + str(temp)  +  "degrés" 
